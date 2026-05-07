@@ -1,6 +1,11 @@
 """
 transit_data.py
-Classes for storing and working with transit route delay data.
+Includes classes used to store and analyze
+delay information for individual transportation routes.
+
+This module supports route-based delay tracking, average
+delay calculations, and operator overloading methods.
+
 By: Sankalp Khira
 """
 
