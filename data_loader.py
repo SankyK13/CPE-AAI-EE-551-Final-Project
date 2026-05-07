@@ -1,6 +1,9 @@
 """
 data_loader.py
-Thid program handles reading/loading, validating, and cleaning the transit delay CSV.
+This program handles reading/loading, validating, and cleaning the transit delay CSV.
+
+It cleans and preprocesses the transportation delay dataset by
+removing missing values and preparing the data for analysis and delay prediction.
 By: Sankalp Khira
 """
 import pandas as pd
