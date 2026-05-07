@@ -1,6 +1,11 @@
 """
 analytics.py
 This file includes all of the statistical analysis functions for delay data.
+Provides utility functions for loading, processing, and
+analyzing transportation delay data using Pandas, NumPy,
+and other Python libraries.
+
+Includes filtering and generator-based data processing functions.
 By: Rakshita Singh
 """
 import math
