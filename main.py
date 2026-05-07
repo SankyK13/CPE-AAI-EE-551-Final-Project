@@ -3,9 +3,8 @@ main.py
 Runs the full transit delay analysis pipeline.
 By: Pal Sanjaybhai Anghan
 
-NOTE: For the final submission this should be converted to a
-Jupyter Notebook (main.ipynb). Each section below maps to a
-notebook cell.
+Note: This should be converted to a Jupyter Notebook (main.ipynb). 
+Each section below maps to a notebook cell.
 """
 
 from data_loader import load_data, clean_data, data_summary
