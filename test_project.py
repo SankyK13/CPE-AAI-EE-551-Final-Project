@@ -1,6 +1,7 @@
 """
 test_project.py
 Pytest test cases for the transit delay analysis project.
+Tests include average delay calculations and delay prediction logic.
 Run with:  pytest test_project.py -v
 By: Pal Sanjaybhai Anghan
 """
@@ -51,7 +52,6 @@ def test_network_add_and_contains():
     assert "R99" not in net
     assert len(net) == 1
 
-
 def test_network_generator():
     #Generator should yield all delay records
     net = TransitNetwork()
@@ -62,7 +62,6 @@ def test_network_generator():
     all_delays = list(net.delay_generator())
     assert len(all_delays) == 3
     assert all_delays[0] == ("R1", 3.0)
-
 
 def test_network_set_operations():
     #Common categories should be the intersection
@@ -75,7 +74,6 @@ def test_network_set_operations():
     common = net.common_categories("R1", "R2")
     assert common == {"Moderate"}
 
-
 #Analytics tests
 
 def test_compute_statistics():
@@ -85,19 +83,16 @@ def test_compute_statistics():
     assert median == pytest.approx(6.0)
     assert std > 0
 
-
 def test_rms_delay():
     delays = [3.0, 4.0]
     rms = compute_rms_delay(delays)
     # sqrt((9 + 16) / 2) = sqrt(12.5) ≈ 3.5355
     assert rms == pytest.approx(3.5355, abs=0.001)
 
-
 def test_get_high_delays():
     delays = [1, 5, 10, 15, 20]
     result = get_high_delays(delays, 10)
     assert result == [15, 20]
-
 
 #Data loader exception tests
 
@@ -106,14 +101,12 @@ def test_load_missing_file():
     with pytest.raises(FileNotFoundError):
         load_data("this_file_does_not_exist.csv")
 
-
 def test_load_missing_columns(tmp_path):
     #Should raise ValueError if required columns are missing
     bad_csv = tmp_path / "bad.csv"
     bad_csv.write_text("col_a,col_b\n1,2\n")
     with pytest.raises(ValueError):
         load_data(str(bad_csv))
-
 
 #Data cleaning test
 
